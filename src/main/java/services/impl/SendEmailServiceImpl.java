@@ -1,4 +1,6 @@
-package sendingmassage;
+package services.impl;
+
+import services.SendEmailService;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -8,15 +10,15 @@ import java.util.Properties;
 /**
  * Created by Ваня on 19.09.2017.
  */
-public class Sender implements Runnable {
+public class SendEmailServiceImpl implements Runnable , SendEmailService{
 
-    Thread t;
+    private Thread t;
     private String  username;
     private String  password;
     private Properties props;
 
-    public Sender(String username, String password) {
-        t = new Thread(this, "Second thread");
+    public SendEmailServiceImpl(String username, String password) {
+        t = new Thread(this, "Message thread");
         this.username = username;
         this.password = password;
 
@@ -36,6 +38,7 @@ public class Sender implements Runnable {
                 return new PasswordAuthentication(username, password);
             }
         });
+
         try{
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
@@ -52,7 +55,7 @@ public class Sender implements Runnable {
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + " starts");
-        this.send("Test", "10 users have already signed up!", "vertex-java@ukr.net");
+        this.send("Test", "10 users have already signed up !", "vertex-java@ukr.net");
         System.out.println(Thread.currentThread().getName()+" finished");
     }
 }
