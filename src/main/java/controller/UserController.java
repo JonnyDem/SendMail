@@ -7,7 +7,7 @@ import services.factory.ServiceFactory;
 /**
  * Created by Ваня on 19.09.2017.
  */
-public class Controller {
+public class UserController {
 
     public static void main(String[] args) throws InterruptedException {
 

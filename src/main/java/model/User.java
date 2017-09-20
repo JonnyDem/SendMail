@@ -1,13 +1,14 @@
 package model;
 
-import database.UsereDataBase;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.xml.soap.SAAJResult;
 
 /**
  * Created by Ваня on 19.09.2017.
  */
 public class User {
 
+    String name;
+    String surname;
+    int age;
 }

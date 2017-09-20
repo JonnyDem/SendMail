@@ -32,6 +32,9 @@ public class SendEmailServiceImpl implements Runnable , SendEmailService{
     }
 
 
+    /**
+     * {@link SendEmailService}
+     */
     public void send(String subject, String text,String toEmail){
         Session session = Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -55,7 +58,7 @@ public class SendEmailServiceImpl implements Runnable , SendEmailService{
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + " starts");
-        this.send("Test", "10 users have already signed up !", "vertex-java@ukr.net");
-        System.out.println(Thread.currentThread().getName()+" finished");
+        this.send("Test", "100 users have already signed up !", "vertex-java@ukr.net");
+        System.out.println(Thread.currentThread().getName() + " finished");
     }
 }

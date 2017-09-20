@@ -10,10 +10,16 @@ import services.impl.UserServiceImpl;
  */
 public class ServiceFactory  {
 
+    /**
+     * @return new SendEmailServiceImpl
+     */
     public static SendEmailService getEmailService(){
         return new SendEmailServiceImpl("vertex-java@ukr.net", "vertex2017");
     }
 
+    /**
+     * @return new UserServiceImpl
+     */
     public static UserService getUserService(){
         return new UserServiceImpl();
     }

@@ -7,10 +7,11 @@ import model.User;
 /**
  * Created by Ваня on 20.09.2017.
  */
-public class UserDaoImpl implements UserDao,Runnable {
+public class UserDaoImpl implements UserDao{
 
-    Thread t=new Thread(this);
-
+    /**
+     * {@link UserDao}
+     */
     @Override
     public void putUserToDataBase() {
         int i = 1;
@@ -24,11 +25,6 @@ public class UserDaoImpl implements UserDao,Runnable {
                 e.printStackTrace();
             }
         }
-    }
-
-    @Override
-    public void run() {
-       this.putUserToDataBase();
     }
 }
 

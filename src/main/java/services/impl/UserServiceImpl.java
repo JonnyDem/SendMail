@@ -9,6 +9,9 @@ import services.UserService;
  */
 public class UserServiceImpl implements UserService, Runnable{
 
+    /**
+     * {@link UserService}
+     */
     @Override
     public void putUserToDataBase() {
         UserDao userDao = DaoFactory.getUserDao();

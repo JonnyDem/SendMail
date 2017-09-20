@@ -5,5 +5,8 @@ package dao;
  */
 public interface UserDao {
 
+    /**
+     * puts 10 Users to list(data base)
+     */
     public void putUserToDataBase();
 }

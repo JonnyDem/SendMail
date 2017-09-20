@@ -5,5 +5,8 @@ package services;
  */
 public interface UserService {
 
+    /**
+     *  puts 10 Users to list(data base)
+     */
     public void putUserToDataBase();
 }

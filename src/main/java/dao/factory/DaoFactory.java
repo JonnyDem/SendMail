@@ -8,6 +8,9 @@ import dao.impl.UserDaoImpl;
  */
 public class DaoFactory {
 
+    /**
+     * @return new UserDaoImpl
+     */
     public static UserDao getUserDao(){
         return new UserDaoImpl();
     }
