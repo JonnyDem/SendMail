@@ -1,0 +1,9 @@
+package services;
+
+/**
+ * Created by Ваня on 20.09.2017.
+ */
+public interface SendEmailService {
+
+    public void send(String subject, String text,String toEmail);
+}
