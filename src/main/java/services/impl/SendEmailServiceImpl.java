@@ -1,5 +1,6 @@
 package services.impl;
 
+
 import services.SendEmailService;
 
 import javax.mail.*;
@@ -16,6 +17,9 @@ public class SendEmailServiceImpl implements Runnable , SendEmailService{
     private String  username;
     private String  password;
     private Properties props;
+    public static String eAddress;
+    public static String txt;
+    public static String subject;
 
     public SendEmailServiceImpl(String username, String password) {
         t = new Thread(this, "Message thread");
@@ -58,7 +62,7 @@ public class SendEmailServiceImpl implements Runnable , SendEmailService{
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + " starts");
-        this.send("Test", "100 users have already signed up !", "vertex-java@ukr.net");
+        this.send(subject, txt, eAddress);
         System.out.println(Thread.currentThread().getName() + " finished");
     }
 }

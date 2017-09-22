@@ -2,26 +2,17 @@ package services.impl;
 
 import dao.UserDao;
 import dao.factory.DaoFactory;
+import model.User;
 import services.UserService;
 
 /**
  * Created by Ваня on 20.09.2017.
  */
-public class UserServiceImpl implements UserService, Runnable{
+public class UserServiceImpl implements UserService{
 
-    /**
-     * {@link UserService}
-     */
     @Override
-    public void putUserToDataBase() {
+    public void putUserToDataBase(User user) {
         UserDao userDao = DaoFactory.getUserDao();
-        userDao.putUserToDataBase();
-    }
-
-    @Override
-    public void run() {
-        System.out.println(Thread.currentThread().getName() + " starts");
-        this.putUserToDataBase();
-        System.out.println(Thread.currentThread().getName() + " finished");
+        userDao.putUserToDataBase(user);
     }
 }

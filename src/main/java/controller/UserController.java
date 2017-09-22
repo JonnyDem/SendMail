@@ -1,7 +1,10 @@
 package controller;
 
-import services.SendEmailService;
+import dao.UserDao;
+import dao.factory.DaoFactory;
+import model.User;
 import services.factory.ServiceFactory;
+import services.impl.SendEmailServiceImpl;
 
 
 /**
@@ -11,9 +14,21 @@ public class UserController {
 
     public static void main(String[] args) throws InterruptedException {
 
-        Thread thread = new Thread((Runnable) ServiceFactory.getUserService(),"Add user thread");
-        thread.start();
-        thread.join();
-        SendEmailService emailService = ServiceFactory.getEmailService();
+        UserDao userDao = DaoFactory.getUserDao();
+        SendEmailServiceImpl.eAddress = "vertex-java@ukr.net";
+        SendEmailServiceImpl.subject = "Sending test";
+        int i = 1;
+        while (i <= 100) {
+            User user = new User();
+            userDao.putUserToDataBase(user);
+            i++;
+            Thread.sleep(1000);
+            String str = "" + i;
+            if (str.endsWith("0")) {
+                SendEmailServiceImpl.txt = i + " users signed up";
+                ServiceFactory.getEmailService();
+                System.out.println(i);
+            }
+        }
     }
 }

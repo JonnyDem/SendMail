@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SendMessageController">
+   <children>
+      <Button fx:id="btnSendEmail" layoutX="34.0" layoutY="354.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Send e-mail">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#a1ebdf" />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <TextField fx:id="enterMailField" alignment="CENTER" blendMode="DARKEN" layoutX="34.0" layoutY="27.0" prefHeight="26.0" prefWidth="200.0" promptText="Enter e-mail">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <DropShadow color="#073c35" />
+         </effect>
+      </TextField>
+      <TextArea fx:id="txtArea" layoutX="34.0" layoutY="133.0" prefHeight="200.0" prefWidth="533.0" promptText="Enter text of message">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow color="#073c35" />
+         </effect>
+      </TextArea>
+      <TextField fx:id="subjectField" alignment="CENTER" layoutX="34.0" layoutY="80.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter subject">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow color="#073c35" />
+         </effect>
+      </TextField>
+   </children>
+   <effect>
+      <InnerShadow color="#698a89" />
+   </effect>
+</AnchorPane>
